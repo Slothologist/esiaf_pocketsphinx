@@ -55,7 +55,7 @@ def vad_finished_callback():
 
 
 handler.add_input_topic(esiaf_audio_info, input_callback)
-handler.add_vad_finished_callback(vad_finished_callback)
+handler.add_vad_finished_callback(data['esiaf_input_topic'], vad_finished_callback)
 handler.start_esiaf()
 
 rospy.loginfo('Pocketsphinx ready!')
