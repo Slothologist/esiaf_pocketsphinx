@@ -1,0 +1,4 @@
+esiaf_input_topic: /esiaf_ros/segmented
+pocketsphinx_dict_file: 1
+pocketsphinx_model_hmm: 1
+pocketsphinx_model_lm: 1
