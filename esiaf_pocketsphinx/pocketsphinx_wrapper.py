@@ -2,6 +2,16 @@ from pocketsphinx import Pocketsphinx
 import signal
 from esiaf_ros.msg import RecordingTimeStamps, AugmentedAudio, SpeechHypothesis, SpeechInfo
 import rospy
+import StringIO
+
+def msg_from_string(msg, data):
+    msg.deserialize(data)
+
+
+def msg_to_string(msg):
+    buf = StringIO.StringIO()
+    msg.serialize(buf)
+    return buf.getvalue()
 
 
 class Wrapper(Pocketsphinx):
@@ -39,15 +49,18 @@ class Wrapper(Pocketsphinx):
         speechInfo.hypotheses = [hypo]
         speechInfo.duration = time
 
-        self.speech_publisher.publish(speechInfo)
+        self.speech_publisher.publish(msg_to_string(speechInfo))
 
         self.start = None
         self.finish = None
 
 
     def add_audio_data(self, audio_data, recording_timestamps):
+        _recording_timestamps = RecordingTimeStamps()
+        recording_timestamps.deserialize(_recording_timestamps)
+        rospy.loginfo('got data!')
         if not self.start:
-            self.start = recording_timestamps.start
-        self.finish = recording_timestamps.finish
+            self.start = _recording_timestamps.start
+        self.finish = _recording_timestamps.finish
         bytearray = audio_data.tobytes()
         self.process_raw(bytearray, self.no_search, self.full_utt)
