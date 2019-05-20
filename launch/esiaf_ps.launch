@@ -1,4 +1,4 @@
 <launch>
 <arg name="path_to_config" />
-<node name="esiaf_pocketsphinx" pkg="esiaf_pocketphinx" type="start_pocketsphinx.py" output="screen" args="$(arg path_to_config)" />
+<node name="esiaf_pocketsphinx" pkg="esiaf_pocketsphinx" type="start_pocketsphinx.py" output="screen" args="$(arg path_to_config)" />
 </launch>
