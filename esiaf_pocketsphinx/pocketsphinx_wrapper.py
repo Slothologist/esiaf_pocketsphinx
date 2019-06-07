@@ -33,9 +33,10 @@ class Wrapper(Pocketsphinx):
         raise StopIteration
 
     def vad_finished_callback(self):
-        result = None
+        result = ''
         if self.hyp():
             result = self.__str__
+        rospy.loginfo('understood: \'' + str(result) + '\'')
 
         hypo = SpeechHypothesis()
         hypo.recognizedSpeech = result
@@ -49,7 +50,7 @@ class Wrapper(Pocketsphinx):
         speechInfo.hypotheses = [hypo]
         speechInfo.duration = time
 
-        self.speech_publisher.publish(msg_to_string(speechInfo))
+        self.speech_publisher.publish(speechInfo)
 
         self.start = None
         self.finish = None
@@ -57,8 +58,8 @@ class Wrapper(Pocketsphinx):
 
     def add_audio_data(self, audio_data, recording_timestamps):
         _recording_timestamps = RecordingTimeStamps()
-        recording_timestamps.deserialize(_recording_timestamps)
-        rospy.loginfo('got data!')
+        msg_from_string(_recording_timestamps, recording_timestamps)
+        rospy.loginfo('got audio!')
         if not self.start:
             self.start = _recording_timestamps.start
         self.finish = _recording_timestamps.finish

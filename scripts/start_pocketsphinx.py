@@ -46,8 +46,8 @@ esiaf_audio_info.allowedFormat = esiaf_format
 rospy.loginfo('adding input topic...')
 
 
-def input_callback(**kwargs):
-    wrapper.add_audio_data(**kwargs)
+def input_callback(audio, timeStamps):
+    wrapper.add_audio_data(audio, timeStamps)
 
 
 def vad_finished_callback():
@@ -55,7 +55,9 @@ def vad_finished_callback():
 
 
 handler.add_input_topic(esiaf_audio_info, input_callback)
-handler.add_vad_finished_callback(data['esiaf_input_topic'], vad_finished_callback)
+rospy.loginfo('input topic added')
+handler.add_vad_finished_callback(esiaf_audio_info, vad_finished_callback)
+rospy.loginfo('vad callback added')
 handler.start_esiaf()
 
 rospy.loginfo('Pocketsphinx ready!')
