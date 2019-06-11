@@ -33,9 +33,10 @@ class Wrapper(Pocketsphinx):
         raise StopIteration
 
     def vad_finished_callback(self):
+        self.end_utt()
         result = ''
         if self.hyp():
-            result = self.__str__
+            result = self.hypothesis()
         rospy.loginfo('understood: \'' + str(result) + '\'')
 
         hypo = SpeechHypothesis()
@@ -62,6 +63,7 @@ class Wrapper(Pocketsphinx):
         rospy.loginfo('got audio!')
         if not self.start:
             self.start = _recording_timestamps.start
+            self.start_utt()
         self.finish = _recording_timestamps.finish
         bytearray = audio_data.tobytes()
         self.process_raw(bytearray, self.no_search, self.full_utt)
