@@ -3,7 +3,6 @@
 from esiaf_pocketsphinx.pocketsphinx_wrapper import Wrapper
 import pyesiaf
 import rospy
-from moveit_ros_planning_interface._moveit_roscpp_initializer import roscpp_init
 
 # config
 import yaml
@@ -14,7 +13,7 @@ nodename = 'esiaf_pocketsphinx'
 
 # initialize rosnode
 rospy.init_node(nodename)
-roscpp_init(nodename, [])
+pyesiaf.roscpp_init(nodename, [])
 
 # read config
 rospy.loginfo('Loading config...')
