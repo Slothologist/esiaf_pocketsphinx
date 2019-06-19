@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar testgrammar;
+
+public <testrule> = <number>;
+
+<number> = zero | one | two | three | four | five | six | seven | eight | nine | ten;

@@ -26,7 +26,7 @@ data = yaml.safe_load(open(path_to_config))
 
 rospy.loginfo('Creating pocketsphinx instance...')
 
-wrapper = Wrapper(nodename=nodename)
+wrapper = Wrapper(nodename=nodename, **data)
 
 rospy.loginfo('Creating esiaf handler...')
 handler = pyesiaf.Esiaf_Handler('pocketsphinx', pyesiaf.NodeDesignation.SpeechRec, sys.argv)
