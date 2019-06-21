@@ -11,7 +11,7 @@ setup_args = generate_distutils_setup(
     author_email='rfeldh@gmail.com',
     license='---none---',
     install_requires=[
-        'pocketsphinx',
+        'pocketsphinx>=0.1.15',
     ],
     packages=['esiaf_pocketsphinx']
 

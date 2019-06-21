@@ -1,4 +1,4 @@
-from pocketsphinx import Jsgf, Decoder, get_model_path, get_data_path
+from pocketsphinx import Jsgf, Decoder, get_model_path
 import signal
 from esiaf_ros.msg import RecordingTimeStamps, AugmentedAudio, SpeechHypothesis, SpeechInfo
 import rospy
