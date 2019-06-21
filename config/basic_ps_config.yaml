@@ -1,5 +1,5 @@
 esiaf_input_topic: /esiaf_ros/segmented
-grammar_file: ${CATKIN_INSTALL_DIR}/share/esiaf_pocketsphinx/grammars/testgrammar.jsgf
+grammar_file: ${prefix}/share/esiaf_pocketsphinx/grammars/testgrammar.jsgf
 grammar_rule: testrule
 grammar_name: testgrammar
 # additional possible parameters are passed through to pocketsphinx, such as hmm, lm, dict, dic
