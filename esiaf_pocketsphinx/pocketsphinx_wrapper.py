@@ -21,6 +21,8 @@ class Wrapper():
 
         model_path = get_model_path()
 
+        kwargs = {x: os.path.expandvars(kwargs[x]) for x in kwargs}
+
         nodename = kwargs.pop('nodename')
         grammar_file = kwargs.pop('grammar_file', None)
         grammar_rule = kwargs.pop('grammar_rule', None)
@@ -61,7 +63,6 @@ class Wrapper():
         self.decoder = Decoder(config)
 
         if grammar_file and grammar_rule and grammar_name:
-            grammar_file, grammar_rule, grammar_name = [os.path.expandvars(x) for x in [grammar_file, grammar_rule, grammar_name]]
             jsgf = Jsgf(grammar_file)
             rule = jsgf.get_rule(grammar_name + '.' + grammar_rule)
             fsg = jsgf.build_fsg(rule, self.decoder.get_logmath(), 7.5)
