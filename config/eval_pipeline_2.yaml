@@ -1,0 +1,8 @@
+esiaf_input_topic: /esiaf_ros/segmented
+grammar_file: ${prefix}/share/esiaf_pocketsphinx/grammars/eval_pipeline.jsgf
+grammar_rule: evalrule
+grammar_name: evalgrammar
+# additional possible parameters are passed through to pocketsphinx, such as hmm, lm, dict, dic
+lm: ${prefix}/share/pocketsphinx/model/de-de/de-de.lm.bin
+dic: ${prefix}/share/pocketsphinx/tobiDic_ger.dic
+hmm: ${prefix}/share/pocketsphinx/model/de-de/de-de

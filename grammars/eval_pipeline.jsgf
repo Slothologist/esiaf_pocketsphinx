@@ -1,0 +1,30 @@
+#JSGF V1.0;
+
+grammar evalgrammar;
+
+public <evalrule> = <file1> | <file2>;
+
+<file1> = hallo flobi;
+<file2> = mein Name ist (birte | konstantin | luca | victor | tobi | saskia | juli | thomas | micha | anja | fine | rene);
+<file3> = ja das stimmt;
+<file4> = nein das moechte ich nicht;
+<file5> = okay ist in ordnung;
+<file6> = gut das mache ich;
+<file7> = wo kommt denn der kochloeffel hin;
+<file8> = was muss ich machen;
+<file9> = ich brauche deine hilfe;
+<file10> = mach das licht in der kueche an;
+<file11> = beleuchtung bitte;
+<file12> = wo geht das licht an;
+<file13> = schick mir flobi in die kueche;
+<file14> = kann ich was zu trinken haben;
+<file15> = ist der geschirrspueler fertig;
+<file16> = flobi wo sind die glaeser;
+<file17> = wo sind die glaeser;
+<file18> = entspannungsmodus starten;
+<file19> = ich bin fertig damit;
+<file20> = okay;
+<file21> = ja;
+<file22> = nein;
+<file23> = auf wiedersehen;
+<file24> = tschuess;
