@@ -1,6 +1,7 @@
 esiaf_input_topic: /esiaf_ros/segmented
+verbose: True
 grammar_file: ${prefix}/share/esiaf_pocketsphinx/grammars/robocup_task.jsgf
 grammar_rule: question
 grammar_name: questions
 # additional possible parameters are passed through to pocketsphinx, such as hmm, lm, dict, dic
-dic: ${prefix}/../pepper-robocup-nightly/share/SpeechRec/psGrammar/dictionary/tobiDic.dic
+dic: ${prefix}/share/pocketsphinx/tobiDic.dic
