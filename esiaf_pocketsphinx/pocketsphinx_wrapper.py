@@ -21,7 +21,7 @@ class Wrapper():
 
         model_path = get_model_path()
 
-        kwargs = {x: os.path.expandvars(kwargs[x]) for x in kwargs}
+        kwargs = {x: os.path.expandvars(kwargs[x]) if type(kwargs[x]) is str else kwargs[x] for x in kwargs}
 
         nodename = kwargs.pop('nodename')
         grammar_file = kwargs.pop('grammar_file', None)
@@ -39,7 +39,7 @@ class Wrapper():
         if kwargs.get('lm') is None:
             kwargs['lm'] = os.path.join(model_path, 'en-us.lm.bin')
 
-        if kwargs.get('dict') is None:
+        if kwargs.get('dict') is None and kwargs.get('dic') is None:
             kwargs['dict'] = os.path.join(model_path, 'cmudict-en-us.dict')
 
         if kwargs.pop('verbose', False) is False:
@@ -49,6 +49,8 @@ class Wrapper():
                 kwargs['logfn'] = '/dev/null'
 
         config = Decoder.default_config()
+
+        print(kwargs)
 
         for key, value in kwargs.items():
             if isinstance(value, bool):

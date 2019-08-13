@@ -6,3 +6,4 @@ grammar_name: evalgrammar
 lm: ${prefix}/share/pocketsphinx/model/de-de/de-de.lm.bin
 dic: ${prefix}/share/pocketsphinx/tobiDic_ger.dic
 hmm: ${prefix}/share/pocketsphinx/model/de-de/de-de
+verbose: True

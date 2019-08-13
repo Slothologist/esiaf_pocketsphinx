@@ -2,15 +2,15 @@
 
 grammar evalgrammar;
 
-public <evalrule> = <file1> | <file2>;
+public <evalrule> = <file1> | <file2>| <file3> | <file4> | <file5> | <file6>| <file7> | <file8> | <file9> | <file10>| <file11> | <file12> | <file13> | <file14> | <file15> | <file16>| <file17> | <file18> | <file19> | <file20>| <file21> | <file22> | <file23> | <file24>;
 
 <file1> = hallo flobi;
-<file2> = mein Name ist (birte | konstantin | luca | victor | tobi | saskia | juli | thomas | micha | anja | fine | rene);
+<file2> = mein name ist (birte | konstantin | luca | victor | tobi | saskia | juli | thomas | micha | anja | fine | rene);
 <file3> = ja das stimmt;
 <file4> = nein das moechte ich nicht;
 <file5> = okay ist in ordnung;
 <file6> = gut das mache ich;
-<file7> = wo kommt denn der kochloeffel hin;
+<file7> = wo kommt denn der koch loeffel hin;
 <file8> = was muss ich machen;
 <file9> = ich brauche deine hilfe;
 <file10> = mach das licht in der kueche an;
