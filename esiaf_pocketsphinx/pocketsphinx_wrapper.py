@@ -5,6 +5,7 @@ import rospy
 import StringIO
 import os, sys
 
+
 def msg_from_string(msg, data):
     msg.deserialize(data)
 

@@ -5,3 +5,4 @@ grammar_rule: question
 grammar_name: questions
 # additional possible parameters are passed through to pocketsphinx, such as hmm, lm, dict, dic
 dic: ${prefix}/share/pocketsphinx/tobiDic.dic
+bestpath: no
